@@ -1,6 +1,6 @@
 package com.codeapp.laptps.laptop.service;
 
-import com.codeapp.laptps.common.exception.CustomException;
+import com.codeapp.laptps.common.exception.ResourceNotFoundException;
 import com.codeapp.laptps.laptop.entity.Laptop;
 import com.codeapp.laptps.laptop.interfaceService.LaptopService;
 import com.codeapp.laptps.laptop.mappersLaptop.LaptopMapper;
@@ -33,7 +33,7 @@ public class LaptopServiceImpl implements LaptopService {
     @Override
     public Laptop findById(Integer id) {
         return laptopRepository.findById(id).orElseThrow(() ->
-                new CustomException("No se encuentra el id: ")
+                new ResourceNotFoundException("No se encuentra el id: " + id)
         );
     }
 
@@ -47,7 +47,7 @@ public class LaptopServiceImpl implements LaptopService {
     @Override
     public void deleteById(Integer id) {
         Laptop laptop = laptopRepository.findById(id).orElseThrow(() ->
-                new CustomException("No se encuentra el id: ")
+                new ResourceNotFoundException("No se encuentra el id: ")
         );
         laptopRepository.delete(laptop);
     }

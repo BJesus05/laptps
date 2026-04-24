@@ -5,6 +5,7 @@ public class ErrorResponse {
     private int status;
     private long timestamp;
 
+
     public ErrorResponse(String message, int status) {
         this.message = message;
         this.status = status;
