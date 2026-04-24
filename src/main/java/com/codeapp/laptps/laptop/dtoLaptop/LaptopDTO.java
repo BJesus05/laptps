@@ -1,46 +1,28 @@
-package com.codeapp.laptps.entity;
+package com.codeapp.laptps.laptop.dtoLaptop;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import jakarta.persistence.*;
+@JsonPropertyOrder({
+        "id",
+        "marca",
+        "modelo",
+        "procesador",
+        "ram",
+        "almacenamiento",
+        "tipoDisco",
+        "sistemaOperativo",
+        "tamanioPantalla"
+})
+public class LaptopDTO {
 
-
-@Entity
-@Table(name = "laptops")
-public class Laptop {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
     private String marca;
-    @Column(nullable = false)
     private String modelo;
-    @Column(nullable = false)
     private String procesador;
-    @Column(nullable = false)
-    private Integer ram;     // en GB
-    @Column(nullable = false)
-    private Integer almacenamiento; // en GB
-    @Column(nullable = false)
-    private String tipoDisco;     // SSD / HDD
-    @Column(nullable = false)
+    private Integer ram;
+    private Integer almacenamiento;
+    private String tipoDisco;
     private String sistemaOperativo;
-    @Column(nullable = false)
-    private Double tamanioPantalla; // en pulgadas
-
-    public Laptop() {
-    }
-
-    public Laptop(Integer id, String marca, String modelo, String procesador, Integer ram, Integer almacenamiento, String tipoDisco, String sistemaOperativo, Double tamanioPantalla) {
-        this.id = id;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.procesador = procesador;
-        this.ram = ram;
-        this.almacenamiento = almacenamiento;
-        this.tipoDisco = tipoDisco;
-        this.sistemaOperativo = sistemaOperativo;
-        this.tamanioPantalla = tamanioPantalla;
-    }
+    private Double tamanioPantalla;
 
     public Integer getId() {
         return id;
@@ -113,5 +95,4 @@ public class Laptop {
     public void setTamanioPantalla(Double tamanioPantalla) {
         this.tamanioPantalla = tamanioPantalla;
     }
-
 }
