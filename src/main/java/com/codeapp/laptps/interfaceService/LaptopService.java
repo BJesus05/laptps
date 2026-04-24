@@ -1,7 +1,6 @@
-package com.codeapp.laptps.service;
+package com.codeapp.laptps.interfaceService;
 
 import com.codeapp.laptps.entity.Laptop;
-import com.codeapp.laptps.repository.LaptopRepository;
 
 import java.util.List;
 

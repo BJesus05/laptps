@@ -23,17 +23,14 @@ public class Laptop {
     @Column(nullable = false)
     private String tipoDisco;     // SSD / HDD
     @Column(nullable = false)
-    private Double precio;
-    @Column(nullable = false)
     private String sistemaOperativo;
     @Column(nullable = false)
     private Double tamanioPantalla; // en pulgadas
 
-
     public Laptop() {
     }
 
-    public Laptop(Long id, String marca, String modelo, String procesador, Integer ram, Integer almacenamiento, String tipoDisco, Double precio, String sistemaOperativo, Double tamanioPantalla) {
+    public Laptop(Integer id, String marca, String modelo, String procesador, Integer ram, Integer almacenamiento, String tipoDisco, String sistemaOperativo, Double tamanioPantalla) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -41,16 +38,15 @@ public class Laptop {
         this.ram = ram;
         this.almacenamiento = almacenamiento;
         this.tipoDisco = tipoDisco;
-        this.precio = precio;
         this.sistemaOperativo = sistemaOperativo;
         this.tamanioPantalla = tamanioPantalla;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -100,14 +96,6 @@ public class Laptop {
 
     public void setTipoDisco(String tipoDisco) {
         this.tipoDisco = tipoDisco;
-    }
-
-    public Double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Double precio) {
-        this.precio = precio;
     }
 
     public String getSistemaOperativo() {
